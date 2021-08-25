@@ -11,6 +11,11 @@ if [[ ! -e $DIR ]]; then
   sudo ln -s /usr/local/bin/docker-compose /usr/sbin/docker-compose
 fi
 
+# Build Docker images
+echo "Building Docker Images..."
+cd ../../
+./docker/production-build.sh
+
 # Database migration
 echo "Migrating Database..."
 
@@ -19,11 +24,6 @@ cd www/api/
 
 # Uncompress Dist
 tar -xzvf dist.tar.gz
-
-# Build Docker images
-echo "Building Docker Images..."
-cd ../../
-./docker/production-build.sh
 
 # Run containers for the first time
 ./docker/production-up.sh
