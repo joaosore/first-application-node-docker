@@ -12,7 +12,7 @@ if [[ ! -e $DIR ]]; then
 fi
 
 # Database migration
-echo "Migrating Database..."
+echo "Build Production"
 
 cd www/api/
 ./build-production.sh
