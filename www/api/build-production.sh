@@ -1,7 +1,7 @@
 #!/bin/bash
 
-npm install
-npm run build
+sudo npm install
+sudo npm run build
 cp package*.json dist/
 cd dist/
 NODE_ENV=production npm i
